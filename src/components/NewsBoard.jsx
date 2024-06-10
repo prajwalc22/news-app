@@ -8,7 +8,9 @@ const NewsBoard = () => {
     const fetchArticles = async () => {
       try {
         const response = await fetch(
-          "https://newsapi.org/v2/top-headlines?country=us&apiKey=593cebeb813c438db162bc09a2a8dd08"
+          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+            import.meta.env.VITE_API_KEY
+          }`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
